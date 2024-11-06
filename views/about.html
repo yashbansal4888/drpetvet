@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - DrPet Vet</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Adjust to space items evenly */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            height: 100px; /* Keep your logo height */
+            margin-right: -200px; /* Add some space to the right of the logo */
+        }
+
+        h1 {
+            font-size: 2.5em; /* Adjusted size for better header display */
+            font-family: 'Gabriola', serif;
+            color: white; /* Ensure the color contrasts with header background */
+            font-weight: bold;
+            margin: 0;
+        }
+
+        nav {
+            margin-top: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--hover-link-color);
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        #about h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        #about p {
+            line-height: 1.6;
+            color: #555;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        #about ul {
+            list-style-position: inside; /* Optional: place bullet points inside the container */
+            text-align: left; /* Aligns the text within the ul to the left */
+            padding-left: 20px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px 0;
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="/images/petvetlogo.webp" alt="PetVetLogo" class="logo">
+        <h1>DrPet Vet</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="appointments.html">Make an Appointment</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Signup</a></li>
+                <li><a href="logout.html" class="logout-button">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Welcome to Dr PETVET! We are committed to providing the highest level of care for your beloved pets. Our mission is to ensure a long and healthy life for your furry family members through comprehensive veterinary services.</p>
+            <p>Our Commitment:</p>
+            <p>We believe in delivering exceptional care at every stage of your pet’s life. Our experienced team is dedicated to preventative health care, early detection, and effective treatment, ensuring your pets remain happy and healthy.</p>
+            <p>At our 1st veterinary clinic, a full-service hospital, located in Kamla Nagar, Agra, we are providing the best care to your beloved pet.</p>
+            <p>Our Services:</p>
+            <p>As a full-service clinic, we provide a range of essential services, including:</p>
+            <ul>
+                <li>Dentistry and Dental Digital Imaging: Ensuring your pet’s oral health is a priority.</li>
+                <li>General and Orthopedic Surgery: Skilled surgical care for a variety of needs.</li>
+                <li>Pain Control: Tailored pain management plans for your pet's comfort.</li>
+                <li>Pharmacy Prescriptions: Convenient access to necessary medications.</li>
+                <li>Vaccinations: Keeping your pets protected against preventable diseases.</li>
+                <li>Spays and Neuters</li>
+            </ul>
+            <p>We look forward to caring for your furry companions with compassion and expertise!</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 DrPet Vet. All rights reserved.</p>
+    </footer>
+    <script src="/js/about.js"></script>
+</body>
+
+</html>

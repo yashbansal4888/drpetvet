@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - DrPet Vet</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic styling for the page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            height: 100px;
+            margin-right: -200px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            font-family: 'Gabriola', serif;
+            color: white;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        fieldset {
+            border: none;
+            padding: 0;
+        }
+
+        legend {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px 0;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .otp-section {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .forgot-password {
+            text-align: right;
+            margin-top: -10px;
+        }
+
+        .forgot-password a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="/images/petvetlogo.webp" alt="PetVetLogo" class="logo">
+    <h1>DrPet Vet</h1>
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="appointments.html">Make an Appointment</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="signup.html">Sign Up</a></li>
+            <li><a href="logout.html" class="logout-button">Logout</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section id="login">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <fieldset>
+                <legend>Login Details</legend>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit" id="loginBtn">Login</button>
+            </fieldset>
+        </form><br><br>
+        <div class="forgot-password">
+            <a href="#" id="forgotPasswordLink">Forgot Password?</a>
+        </div>
+    </section>
+
+    <!-- Forgot Password Section -->
+    <section id="forgot-password-section" style="display:none;">
+        <h2>Forgot Password</h2>
+        <form id="forgotPasswordForm">
+            <fieldset>
+                <legend>Reset Password</legend>
+                <label for="forgotEmail">Email:</label>
+                <input type="email" id="forgotEmail" name="forgotEmail" required>
+                <button type="submit">Send Reset Link</button>
+            </fieldset>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 DrPet Vet. All rights reserved.</p>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const loginForm = document.getElementById('loginForm');
+    
+        loginForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            
+            const loginBtn = document.getElementById('loginBtn');
+            loginBtn.disabled = true;
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+        
+            fetch('/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    window.location.href = '/home.html';
+                } else {
+                    alert(data.message);
+                }
+            })
+            .catch(error => {
+                loginBtn.disabled = false;
+                alert('Login failed: ' + error.message);
+            });
+        });
+
+        const forgotPasswordLink = document.getElementById('forgotPasswordLink');
+        const forgotPasswordSection = document.getElementById('forgot-password-section');
+        const loginSection = document.getElementById('login');
+
+        forgotPasswordLink.addEventListener('click', () => {
+            loginSection.style.display = 'none';
+            forgotPasswordSection.style.display = 'block';
+        });
+
+        const forgotPasswordForm = document.getElementById('forgotPasswordForm');
+        forgotPasswordForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const submitButton = forgotPasswordForm.querySelector('button');
+            submitButton.disabled = true;
+            submitButton.innerText = 'Sending...';
+
+            const email = document.getElementById('forgotEmail').value;
+
+            if (!email) {
+                alert('Please enter your email.');
+                submitButton.disabled = false;
+                submitButton.innerText = 'Send Reset Link';
+                return;
+            }
+
+            try {
+                const response = await fetch('/forgot-password', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email }),
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    alert('A password reset link has been sent to your email.');
+                } else {
+                    alert('Error: ' + (result.message || 'Unknown error'));
+                }
+            } catch (error) {
+                console.error('Error submitting forgot password form:', error);
+                alert('Error: Unable to process request.');
+            }
+
+            submitButton.disabled = false;
+            submitButton.innerText = 'Send Reset Link';
+        });
+    });
+</script>
+</body>
+</html>

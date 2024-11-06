@@ -1,0 +1,30 @@
+{
+  "name": "drbets-backend",
+  "version": "1.0.0",
+  "description": "Backend server for DrBets application",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@clerk/clerk-js": "^5.18.0",
+    "@clerk/nextjs": "^5.3.7",
+    "bcrypt": "^5.1.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "express-session": "^1.18.0",
+    "firebase": "^10.13.1",
+    "firebase-admin": "^12.4.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.9.0",
+    "mongoose": "^5.13.22",
+    "nodemailer": "^6.9.15",
+    "session": "^0.1.0",
+    "twilio": "^5.2.2"
+  }
+}

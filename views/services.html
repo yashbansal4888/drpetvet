@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - DrPet Vet</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50; /* Header background color */
+            color: white;
+            padding: 20px 40px; /* Adjusted padding for a more spacious look */
+            display: flex; /* Use flexbox for alignment */
+            align-items: center; /* Center items vertically */
+            justify-content: space-between; /* Space between logo/title and navigation */
+        }
+
+        .logo {
+            height: 100px; /* Keep your logo height */
+            margin-right: -200px; /* Add some space to the right of the logo */
+        }
+
+        h1 {
+            font-size: 3.5em; /* Adjusted size for better header display */
+            font-family: 'Gabriola', serif; /* Adjusted font for elegance */
+            margin: 0; /* Remove default margin */
+        }
+
+        nav {
+            margin-top: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--hover-link-color);
+            text-decoration: underline;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .service-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            transition: background-color 0.3s;
+        }
+
+        .service-item:hover {
+            background-color: #f9f9f9;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px 0;
+            background-color: #4CAF50; /* Footer background color */
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="/images/petvetlogo.webp" alt="PetVet Logo" class="logo">
+        <h1>DrPet Vet</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="appointments.html">Make an Appointment</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+                <li><a href="logout.html" class="logout-button">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="services">
+            <h2>Our Services</h2>
+            <ul class="service-list">
+                <li class="service-item">
+                    <strong>Pet Grooming:</strong>
+                    <p>We provide professional grooming services to keep your pet looking their best.</p>
+                </li>
+                <li class="service-item">
+                    <strong>Pet Supplies:</strong>
+                    <p>Shop our wide selection of quality pet supplies to meet all your pet’s needs.</p>
+                </li>
+                <li class="service-item">
+                    <strong>Treatment:</strong>
+                    <p>Our veterinarians are equipped to diagnose and treat a variety of conditions.</p>
+                </li>
+                <li class="service-item">
+                    <strong>Vaccination:</strong>
+                    <p>Keep your pet healthy with our comprehensive vaccination services.</p>
+                </li>
+                <li class="service-item">
+                    <strong>Surgery:</strong>
+                    <p>We offer safe and effective surgical procedures performed by experienced vets.</p>
+                </li>
+                <li class="service-item">
+                    <strong>Dog Hostel:</strong>
+                    <p>Your dog will love staying at our comfortable and secure dog hostel.</p>
+                </li>
+                <li class="service-item">
+                    <strong>Dog Training:</strong>
+                    <p>Enroll your dog in our training programs to promote good behavior and obedience.</p>
+                </li>
+                <li class="service-item">
+                    <strong>Online Consultation:</strong>
+                    <p>Get veterinary advice from the comfort of your home with our online consultations.</p>
+                </li>
+                <li class="service-item">
+                    <strong>Food & Accessories:</strong>
+                    <p>We carry a range of high-quality food and accessories for your pets.</p>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 DrPet Vet. All rights reserved.</p>
+    </footer>
+    <script src="/js/services.js"></script>
+</body>
+
+</html>

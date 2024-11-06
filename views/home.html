@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DrPet Vet</title>
+    <link rel="stylesheet" href="/styles.css">
+    <style>
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #f4f4f4;
+            --text-color: #333;
+            --hover-color: rgba(255, 255, 255, 0.8);
+            --hover-link-color: #fff;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--secondary-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Adjust to space items evenly */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            height: 100px;
+            margin-right: -200px; /* Space between logo and title */
+        }
+
+        h1 {
+            font-size: 3.5em; /* Reduced font size for better layout */
+            font-family: 'Gabriola', serif;
+            margin: 0;
+        }
+
+        nav {
+            margin-top: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--hover-link-color);
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--text-color);
+            font-size: 2.5em;
+            font-family: 'Georgia', serif;
+            font-weight: bold;
+        }
+
+        p {
+            text-align: center;
+            font-size: 1.1em;
+            margin-bottom: 40px;
+            color: #555;
+        }
+
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image-gallery-inner {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .image-item {
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            background-color: #f9f9f9;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            width: 500px;
+            height: 200px;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .image-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            max-height: 200px;
+            object-fit: cover;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .image-item:hover .overlay {
+            opacity: 1;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--hover-color);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        .arrow:hover {
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        .left-arrow {
+            left: 10px;
+        }
+
+        .right-arrow {
+            right: 10px;
+        }
+
+        .navigation-dots {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .dot {
+            height: 10px;
+            width: 10px;
+            margin: 0 5px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .dot:hover {
+            background-color: #717171;
+        }
+
+        .active {
+            background-color: #4CAF50;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px 0;
+            background-color: var(--primary-color);
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="/images/petvetlogo.webp" alt="PetVetLogo" class="logo">
+        <h1> DrPet Vet</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="appointments.html">Make an Appointment</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="signup.html">Signup</a></li>
+                <li><a href="logout.html" class="logout-button">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Welcome to DrPet Vet</h2>
+            <p>Your one-stop for all your pet needs.</p>
+        </section>
+
+        <section class="image-gallery">
+            <div class="arrow left-arrow" onclick="changeImage(-1)">&#10094;</div>
+            <div class="arrow right-arrow" onclick="changeImage(1)">&#10095;</div>
+            <div class="image-gallery-inner">
+                <div class="image-item">
+                    <img src="/images/poultry.jpeg" alt="Poultry">
+                    <div class="overlay">
+                        <p>Poultry</p>
+                    </div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/bird.jpg" alt="Bird">
+                    <div class="overlay">
+                        <p>Bird</p>
+                    </div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/cat.jpg" alt="Cat">
+                    <div class="overlay">
+                        <p>Cat</p>
+                    </div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/dairy.jpg" alt="Dairy">
+                    <div class="overlay">
+                        <p>Dairy</p>
+                    </div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/dog.jpg" alt="Dog">
+                    <div class="overlay">
+                        <p>Dog</p>
+                    </div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/exotic pet.jpg" alt="Exotic Pet">
+                    <div class="overlay">
+                        <p>Exotic Pet</p>
+                    </div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/Farm animal.jpg" alt="Farm Animal">
+                    <div class="overlay">
+                        <p>Farm Animal</p>
+                    </div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/fish.jpg" alt="Fish">
+                    <div class="overlay">
+                        <p>Fish</p>
+                    </div>
+                </div>
+                <div class="image-item">
+                    <img src="/images/other.png" alt="Other">
+                    <div class="overlay">
+                        <p>Other</p>
+                    </div>
+                </div>
+            </div>
+            <div class="navigation-dots">
+                <span class="dot" onclick="setCurrentImage(0)"></span>
+                <span class="dot" onclick="setCurrentImage(1)"></span>
+                <span class="dot" onclick="setCurrentImage(2)"></span>
+                <span class="dot" onclick="setCurrentImage(3)"></span>
+                <span class="dot" onclick="setCurrentImage(4)"></span>
+                <span class="dot" onclick="setCurrentImage(5)"></span>
+                <span class="dot" onclick="setCurrentImage(6)"></span>
+                <span class="dot" onclick="setCurrentImage(7)"></span>
+                <span class="dot" onclick="setCurrentImage(8)"></span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 DrPet Vet. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let currentIndex = 0; // Start from the first image
+        const images = document.querySelectorAll('.image-item');
+        const totalImages = images.length;
+        const dots = document.querySelectorAll('.dot');
+
+        function changeImage(direction) {
+            currentIndex = (currentIndex + direction + totalImages) % totalImages; // Wrap around
+            updateGallery();
+        }
+
+        function setCurrentImage(index) {
+            currentIndex = index;
+            updateGallery();
+        }
+
+        function updateGallery() {
+            const galleryInner = document.querySelector('.image-gallery-inner');
+            const offset = -currentIndex * 220; // Each image is 220px wide
+            galleryInner.style.transform = `translateX(${offset}px)`;
+
+            // Update active dot
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        // Optional: Navigate with keyboard arrows
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'ArrowLeft') {
+                changeImage(-1);
+            } else if (event.key === 'ArrowRight') {
+                changeImage(1);
+            }
+        });
+
+        // Autoplay feature (optional)
+        setInterval(() => {
+            changeImage(1);
+        }, 1000); // Change image every 5 seconds
+    </script>
+</body>
+
+</html>
