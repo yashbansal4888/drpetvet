@@ -39,8 +39,8 @@ mongoose.connect('mongodb://localhost:27017/drpet_vet', { useNewUrlParser: true,
 // Serve static HTML files
 const servePage = (page) => (req, res) => res.sendFile(path.join(__dirname, '..', 'views', `${page}.html`));
 
-app.get('/', servePage('home'));
-app.get('/home.html', servePage('home'));
+app.get('/', servePage('index'));
+app.get('/index.html', servePage('index'));
 app.get('/about.html', servePage('about'));
 app.get('/services.html', servePage('services'));
 app.get('/contact.html', servePage('contact'));

@@ -1,3 +1,3 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('Home page loaded');
+    console.log('index page loaded');
 });
