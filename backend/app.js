@@ -7,7 +7,7 @@ const bcrypt = require('bcryptjs');
 const nodemailer = require('nodemailer');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
-const Otp = require('./models/Otp');
+const Otp = require('./models/otp');
  // Model for OTPs
 const crypto = require('crypto');
 const { connectToDatabase } = require('./mongoconfig'); // Import MongoDB connection
